@@ -6,7 +6,6 @@ require("connect_db.php");
 $sql = "SELECT student_code, student_name, gender FROM students";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
-    // output data of each row
     echo "<center>";
     echo "Student List<br>";
     echo "<table border=1>";

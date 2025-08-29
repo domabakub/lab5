@@ -2,14 +2,11 @@
 <?php
 require("connect_db.php");
 
-// รับค่าให้เป็นตัวแปรที่ใช้จริง และกัน quote เบื้องต้น
 $student_code = isset($_GET["student_code"]) ? mysqli_real_escape_string($conn, $_GET["student_code"]) : "";
 
-// ดึงข้อมูลนักเรียน
 $sql = "SELECT * FROM students WHERE student_code = '$student_code'";
 $result = mysqli_query($conn, $sql);
 
-// ถ้าเจอแถวให้เอามาใช้ ไม่งั้นตั้งค่าว่างไว้
 $student = mysqli_fetch_assoc($result);
 if (!$student) {
     $student = [
@@ -19,7 +16,6 @@ if (!$student) {
     ];
 }
 
-// ฟังก์ชันกัน HTML พัง/กัน XSS ตอนแสดงค่าใน value
 function h($s) { return htmlspecialchars($s ?? "", ENT_QUOTES, "UTF-8"); }
 
 echo "<center>";
