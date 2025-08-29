@@ -1,3 +1,4 @@
+<?php include("home.php"); ?>
 <?php
 require("connect_db.php");
 $course_code = $_GET["course_code"];

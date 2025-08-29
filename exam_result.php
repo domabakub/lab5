@@ -1,4 +1,7 @@
+<?php include("home.php"); ?>
 <?php
+echo "<center>";
+echo "<h1>Exam Result</h1>";
 require("connect_db.php");
 $sql = "SELECT * FROM courses";
 $result = mysqli_query($conn, $sql);

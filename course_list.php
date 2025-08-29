@@ -1,8 +1,10 @@
+<?php include("home.php"); ?>
 <?php
 require("connect_db.php");
 $sql = "SELECT * FROM courses";
 $result = mysqli_query($conn, $sql);
 echo "<center>";
+echo "<h1>Course list</h1>";
 echo "<table border=1 width=40%>";
 echo "<tr><th>Course Code</th><th>Course Name</th><th>Credit</th><th>Operationt</th></tr>";
 while($row = mysqli_fetch_assoc($result)){
