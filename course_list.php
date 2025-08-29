@@ -1,6 +1,6 @@
 <?php
 require("connect_db.php");
-$sql = "SELECT * FROM course";
+$sql = "SELECT * FROM courses";
 $result = mysqli_query($conn, $sql);
 echo "<center>";
 echo "<table border=1 width=40%>";
